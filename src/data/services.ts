@@ -49,10 +49,10 @@ export const services: Service[] = [
     icon: Globe,
     features: [
       "Design sur mesure, élégant et adapté à votre image de marque",
-      "Optimisation SEO locale (Google Maps, requêtes de proximité)",
+      "Optimisation SEO locale (Google Maps, mots-clés stratégiques et optimisés)",
       "Structure 100% responsive et mobile-first fluide",
-      "Vitesse de chargement optimale (Next.js & React)",
-      "Intégration d'un outil d'administration simple pour vos textes",
+      "Optimisation des performances & vitesse de chargement optimale",
+      "Respect rigoureux des normes légales & conformité RGPD intégrée",
       "Formulaire de contact sécurisé et liens réseaux sociaux",
     ],
     projects: [
