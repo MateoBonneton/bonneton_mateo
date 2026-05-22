@@ -137,6 +137,13 @@ export default function ContactSection() {
                   </div>
                 </div>
 
+                <p className="mb-8 px-1 text-[11px] leading-relaxed text-text-dim text-center sm:text-left">
+                  En envoyant ce formulaire, vous acceptez que vos données soient traitées pour répondre à votre demande conformément à notre{" "}
+                  <a href="/mentions-legales#confidentialite" className="underline transition-colors hover:text-white">
+                    Politique de Confidentialité
+                  </a>.
+                </p>
+
                 <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <button type="submit" className="cta-primary group w-full justify-center sm:w-auto">
                     <span>Envoyer le message</span>

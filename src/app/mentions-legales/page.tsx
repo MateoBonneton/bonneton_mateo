@@ -153,7 +153,21 @@ export default function MentionsLegalesPage() {
                     <p className="mb-6 text-sm leading-relaxed text-text-muted">
                       L&apos;utilisation du site implique l&apos;acceptation pleine et entière des présentes CGU. Le site a pour objet de fournir des informations concernant l&apos;ensemble des activités de l&apos;entreprise de Matéo Bonneton. Les informations y sont présentées de la manière la plus précise possible, mais des omissions ou inexactitudes temporaires peuvent survenir.
                     </p>
-                    
+
+                    <h3 className="mb-4 font-heading text-xs font-bold uppercase tracking-wider text-white">
+                      Limitation de Responsabilité
+                    </h3>
+                    <p className="mb-6 text-sm leading-relaxed text-text-muted">
+                      Matéo Bonneton s&apos;efforce d&apos;assurer l&apos;exactitude des informations diffusées sur ce site, mais ne saurait être tenu pour responsable des erreurs, omissions, ou des résultats obtenus par l&apos;usage de ces informations. De même, Matéo Bonneton ne pourra être tenu responsable de dommages matériels ou indirects (perte de données, perte de marché, perte de chance) liés à l&apos;utilisation du site ou à son indisponibilité temporaire.
+                    </p>
+
+                    <h3 className="mb-4 font-heading text-xs font-bold uppercase tracking-wider text-white">
+                      Liens Hypertextes
+                    </h3>
+                    <p className="mb-6 text-sm leading-relaxed text-text-muted">
+                      Ce site peut contenir des liens vers d&apos;autres sites internet. N&apos;exerçant aucun contrôle sur le contenu de ces sites tiers, Matéo Bonneton décline toute responsabilité quant à leur contenu, leur exactitude ou leur politique de confidentialité.
+                    </p>
+
                     <h3 className="mb-4 font-heading text-xs font-bold uppercase tracking-wider text-white">
                       Politique de Confidentialité (RGPD)
                     </h3>
@@ -165,12 +179,29 @@ export default function MentionsLegalesPage() {
                         <strong className="text-white">Données collectées :</strong> Les seules données collectées sont celles fournies volontairement par l&apos;utilisateur via le formulaire de contact (Nom, Email, Service choisi, Message).
                       </li>
                       <li>
-                        <strong className="text-white">Finalité :</strong> Ces informations sont exclusivement utilisées pour traiter votre demande de contact et concevoir votre projet personnalisé. Elles ne sont jamais revendues ou cédées à des tiers.
+                        <strong className="text-white">Finalité :</strong> Ces informations sont exclusivement utilisées pour traiter votre demande de contact et concevoir votre projet personnalisé. Elles ne sont jamais revendues, cédées ou transmises à des tiers.
+                      </li>
+                      <li>
+                        <strong className="text-white">Durée de conservation :</strong> Les données sont conservées pendant une durée maximale de 3 ans après le dernier contact commercial ou la fin de la relation contractuelle.
                       </li>
                       <li>
                         <strong className="text-white">Vos droits :</strong> Conformément à la réglementation, vous disposez d&apos;un droit d&apos;accès, de rectification, de portabilité et de suppression de vos données personnelles. Pour exercer ce droit, écrivez à : <a href="mailto:contact@mateo-bonneton.fr" className="underline transition-colors hover:text-white">contact@mateo-bonneton.fr</a>.
                       </li>
                     </ul>
+
+                    <h3 className="mb-4 font-heading text-xs font-bold uppercase tracking-wider text-white">
+                      Médiation de la Consommation
+                    </h3>
+                    <p className="mb-6 text-sm leading-relaxed text-text-muted">
+                      Conformément à l&apos;article L. 612-1 du Code de la consommation, en cas de litige de consommation non résolu à l&apos;amiable avec nos services, vous pouvez recourir gratuitement au médiateur de la consommation compétent. À ce titre, vous pouvez saisir l&apos;organisme de médiation de votre choix ou le service de médiation en ligne de référence (ex. : AME Conso sur <a href="https://www.mediationconso-ame.com" target="_blank" rel="noopener noreferrer" className="underline transition-colors hover:text-white">www.mediationconso-ame.com</a>).
+                    </p>
+
+                    <h3 className="mb-4 font-heading text-xs font-bold uppercase tracking-wider text-white">
+                      Droit Applicable et Attribution de Juridiction
+                    </h3>
+                    <p className="mb-6 text-sm leading-relaxed text-text-muted">
+                      Tout litige en relation avec l&apos;utilisation du site est soumis au droit français. Sauf disposition légale contraire d&apos;ordre public, il est fait attribution exclusive de juridiction aux tribunaux compétents des Bouches-du-Rhône (tribunaux de Marseille / Aix-en-Provence).
+                    </p>
 
                     <h3 className="mb-4 font-heading text-xs font-bold uppercase tracking-wider text-white">
                       Cookies
