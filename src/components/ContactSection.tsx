@@ -40,7 +40,7 @@ export default function ContactSection() {
                 variants={fadeUp}
                 className="mb-6 text-center font-heading text-[11px] font-semibold uppercase tracking-[0.4em] text-text-dim"
               >
-                ( 04 ) — Contact
+                ( 04 ) - Contact
               </motion.p>
               <motion.h2
                 custom={0.1}
@@ -111,10 +111,11 @@ export default function ContactSection() {
                       className="w-full bg-black px-3 pb-4 pt-1 text-sm text-text-muted outline-none"
                     >
                       <option value="">Sélectionnez un service</option>
-                      <option value="creation-web">Création Web</option>
-                      <option value="reseaux-sociaux">Gestion Réseaux Sociaux</option>
-                      <option value="accompagnement">Accompagnement Digital</option>
-                      <option value="maintenance">Maintenance Évolutive</option>
+                      <option value="site-vitrine">Site Vitrine sur mesure</option>
+                      <option value="site-ecommerce">Site E-Commerce sur mesure</option>
+                      <option value="reseaux-sociaux">Création de contenu</option>
+                      <option value="accompagnement">Coaching & Autonomie</option>
+                      <option value="maintenance">Maintenance & Support</option>
                     </select>
                   </div>
                 </div>
@@ -150,7 +151,7 @@ export default function ContactSection() {
                   <div className="flex items-center gap-2 py-3">
                     <Clock size={12} strokeWidth={1.5} className="text-text-dim" />
                     <span className="font-heading text-[10px] font-medium uppercase tracking-[0.2em] text-text-dim">
-                      Réponse sous 24h
+                      Réponse sous 48h
                     </span>
                   </div>
                 </div>

@@ -15,8 +15,8 @@ const fadeUp = {
 };
 
 const stats = [
-  { value: "5+", label: "Années d'expérience" },
-  { value: "50+", label: "Projets livrés" },
+  { value: "3+", label: "Années d'expérience" },
+  { value: "30+", label: "Projets livrés" },
   { value: "100%", label: "Clients satisfaits" },
 ];
 
@@ -49,7 +49,7 @@ export default function AboutSection() {
                 variants={fadeUp}
                 className="mb-6 font-heading text-[11px] font-semibold uppercase tracking-[0.4em] text-text-dim"
               >
-                ( 03 ) — À propos
+                ( 03 ) - À propos
               </motion.p>
               <motion.h2
                 custom={0.1}
@@ -87,7 +87,7 @@ export default function AboutSection() {
                 >
                   Mon approche repose sur trois piliers : la performance technique,
                   le design au service du message, et un accompagnement humain
-                  sur le long terme. Pas de solutions génériques — chaque stratégie
+                  sur le long terme. Pas de solutions génériques : chaque stratégie
                   est pensée sur mesure.
                 </motion.p>
 
@@ -129,7 +129,7 @@ export default function AboutSection() {
                   <div className="relative h-80 w-72 overflow-hidden lg:h-[28rem] lg:w-[22rem]">
                     <Image
                       src="/images/mateo.jpeg"
-                      alt="Matéo Bonneton — Expert digital freelance"
+                      alt="Matéo Bonneton - Expert digital freelance"
                       fill
                       className="object-cover object-top grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-[1.03]"
                       sizes="(max-width: 1024px) 288px, 352px"

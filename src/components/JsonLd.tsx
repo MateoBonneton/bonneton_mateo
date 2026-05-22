@@ -8,8 +8,8 @@ interface JsonLdProps {
 
 export default function JsonLd({
   type = "LocalBusiness",
-  name = "Matéo Bonneton — Expert Digital",
-  description = "Expert digital freelance dans les Bouches-du-Rhône. Création de sites web, gestion de réseaux sociaux et accompagnement digital en Provence.",
+  name = "Matéo Bonneton - Expert Digital",
+  description = "Expert digital freelance dans les Bouches-du-Rhône. Création de sites web sur mesure, création de contenu, coaching & formation à l'autonomie et maintenance en Provence.",
   url = "https://mateo-bonneton.fr",
   serviceType,
 }: JsonLdProps) {
@@ -29,11 +29,27 @@ export default function JsonLd({
       },
       {
         "@type": "City",
+        name: "Martigues",
+      },
+      {
+        "@type": "City",
+        name: "Istres",
+      },
+      {
+        "@type": "City",
+        name: "Fos-sur-Mer",
+      },
+      {
+        "@type": "City",
         name: "Marseille",
       },
       {
         "@type": "City",
         name: "Aix-en-Provence",
+      },
+      {
+        "@type": "City",
+        name: "Salon-de-Provence",
       },
     ],
     address: {

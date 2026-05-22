@@ -42,7 +42,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="max-w-xs text-sm leading-[1.8] text-text-muted">
-              Expert digital freelance dans les Bouches-du-Rhône —
+              Expert digital freelance dans les Bouches-du-Rhône -
               le boost digital des entreprises de Provence.
             </p>
             <div className="mt-2 flex gap-5">

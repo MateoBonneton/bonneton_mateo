@@ -69,7 +69,7 @@ export default function ProcessSection() {
                 variants={fadeUp}
                 className="mb-6 font-heading text-[11px] font-semibold uppercase tracking-[0.4em] text-text-dim"
               >
-                ( 02 ) — Processus
+                ( 02 ) - Processus
               </motion.p>
               <motion.h2
                 custom={0.1}

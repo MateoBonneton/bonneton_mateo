@@ -54,7 +54,7 @@ export default function Header() {
           <Link href="/" className="group flex items-center gap-3">
             <Image
               src="/images/bonneton_mateo_logo.png"
-              alt="Matéo Bonneton — Expert Digital"
+              alt="Matéo Bonneton - Expert Digital"
               width={36}
               height={36}
               priority

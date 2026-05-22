@@ -5,6 +5,7 @@ import PageTransition from "@/components/PageTransition";
 import JsonLd from "@/components/JsonLd";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface ServicePageProps {
   params: Promise<{ slug: string }>;
@@ -51,7 +52,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
     <PageTransition>
       <JsonLd
         type="ProfessionalService"
-        name={`${service.title} — Matéo Bonneton`}
+        name={`${service.title} - Matéo Bonneton`}
         description={service.metaDescription}
         url={`https://mateo-bonneton.fr/services/${service.slug}`}
         serviceType={service.shortTitle}
@@ -130,6 +131,101 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   ))}
                 </div>
               </div>
+
+              {/* Projects Gallery */}
+              {service.projects && service.projects.length > 0 ? (
+                <div className="mb-24">
+                  <p className="mb-10 text-[11px] font-semibold uppercase tracking-[0.4em] text-text-dim">
+                    ( Projets ) - Réalisations récentes
+                  </p>
+                  <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+                    {service.projects.map((project) => (
+                      <div 
+                        key={project.title} 
+                        className="group relative flex flex-col overflow-hidden border border-white/[0.08] bg-[#0d0d0e] p-5 transition-all duration-500 hover:border-white/20 hover:bg-[#141415] hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+                      >
+                        {/* Subtle top-right accent glow on hover */}
+                        <div 
+                          className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-white opacity-0 blur-[80px] transition-opacity duration-700 group-hover:opacity-[0.03]" 
+                          aria-hidden="true" 
+                        />
+                        
+                        {/* Image Container */}
+                        <div className="relative aspect-[4/3] w-full overflow-hidden border border-grid-line-strong bg-black">
+                          <Image
+                            src={project.image}
+                            alt={`${project.title} - ${project.client}`}
+                            fill
+                            className="object-cover transition-all duration-700 group-hover:scale-[1.04] group-hover:filter group-hover:brightness-[1.05]"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                            priority
+                          />
+                        </div>
+
+                        {/* Project Info */}
+                        <div className="relative z-10 mt-6 flex flex-1 flex-col">
+                          <span className="font-heading text-[10px] font-bold uppercase tracking-[0.2em] text-text-dim">
+                            {project.category}
+                          </span>
+                          <h3 className="mt-2 font-heading text-lg font-black uppercase tracking-[0.05em] text-white">
+                            {project.title}
+                          </h3>
+                          <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-text-dim">
+                            {project.client}
+                          </p>
+                          {/* Decorative small separator */}
+                          <div className="my-4 h-px w-6 bg-grid-line-strong transition-all duration-500 group-hover:w-12 group-hover:bg-white/30" />
+                          <p className="text-sm leading-relaxed text-text-muted/80">
+                            {project.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="mb-24">
+                  <p className="mb-10 text-[11px] font-semibold uppercase tracking-[0.4em] text-text-dim">
+                    ( Projets ) - Réalisations récentes
+                  </p>
+                  <div className="relative overflow-hidden border border-grid-line-strong bg-black/40 p-8 sm:p-12 text-center backdrop-blur-sm">
+                    {/* Grid pattern background effect */}
+                    <div 
+                      className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                      style={{
+                        backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+                        backgroundSize: "24px 24px"
+                      }}
+                      aria-hidden="true"
+                    />
+                    
+                    <div className="relative z-10 mx-auto max-w-lg">
+                      <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center border border-dashed border-white/20 text-white/50">
+                        <Icon size={18} strokeWidth={1.5} />
+                      </div>
+                      
+                      <h3 className="font-heading text-base font-black uppercase tracking-wider text-white">
+                        Votre projet ici ?
+                      </h3>
+                      
+                      <p className="mt-4 text-xs leading-relaxed text-text-muted">
+                        Vous souhaitez être le premier à bénéficier de ce service d&apos;exception dans la région ? 
+                        Collaborons ensemble pour concevoir votre solution sur mesure à Martigues, Istres, Fos-sur-Mer ou Marseille et donnez vie à votre projet.
+                      </p>
+                      
+                      <div className="mt-8 flex justify-center">
+                        <Link 
+                          href="/#contact" 
+                          className="inline-flex items-center gap-2 border border-white bg-white px-6 py-3 text-[10px] font-semibold uppercase tracking-widest text-black transition-all duration-400 hover:bg-black hover:text-white"
+                        >
+                          <span>Lancer mon projet</span>
+                          <ArrowRight size={12} strokeWidth={2.5} />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* CTA */}
               <div className="flex flex-wrap gap-4">

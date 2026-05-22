@@ -7,27 +7,28 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Matéo Bonneton — Expert Digital Bouches-du-Rhône",
+    default: "Matéo Bonneton - Expert Digital Bouches-du-Rhône",
     template: "%s | Matéo Bonneton",
   },
   description:
-    "Expert digital freelance dans les Bouches-du-Rhône. Création de sites web, gestion de réseaux sociaux et accompagnement digital à Marseille, Aix-en-Provence et en Provence.",
+    "Expert digital freelance dans les Bouches-du-Rhône (Martigues, Istres, Fos-sur-Mer, Marseille). Création de sites web sur mesure, création de contenu (photo & vidéo), coaching vers l'autonomie et maintenance.",
   keywords: [
     "expert digital Bouches-du-Rhône",
+    "création site web Martigues",
+    "création site internet Istres",
+    "développeur web Fos-sur-Mer",
     "création site web Marseille",
-    "création site web Aix-en-Provence",
-    "freelance web 13",
-    "gestion réseaux sociaux Marseille",
-    "accompagnement digital Provence",
-    "développeur web Provence",
+    "community manager Martigues",
+    "freelance web Bouches-du-Rhône",
+    "coaching digital Istres",
   ],
   authors: [{ name: "Matéo Bonneton" }],
   creator: "Matéo Bonneton",
   metadataBase: new URL("https://mateo-bonneton.fr"),
   openGraph: {
-    title: "Matéo Bonneton — Expert Digital Bouches-du-Rhône",
+    title: "Matéo Bonneton - Expert Digital Bouches-du-Rhône",
     description:
-      "Le boost digital des entreprises de Provence. Création web, contenus, accompagnement.",
+      "Le boost digital des entreprises de Provence. Création web, création de contenu, coaching & autonomie.",
     url: "https://mateo-bonneton.fr",
     siteName: "Matéo Bonneton",
     locale: "fr_FR",
@@ -43,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Matéo Bonneton — Expert Digital Bouches-du-Rhône",
+    title: "Matéo Bonneton - Expert Digital Bouches-du-Rhône",
     description:
-      "Le boost digital des entreprises de Provence. Création web, contenus, accompagnement.",
+      "Le boost digital des entreprises de Provence. Création web, création de contenu, coaching & autonomie.",
   },
   robots: {
     index: true,

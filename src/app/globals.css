@@ -12,8 +12,8 @@
   --gray-900: #171717;
   --grid-line: rgba(255, 255, 255, 0.06);
   --grid-line-strong: rgba(255, 255, 255, 0.12);
-  --text-muted: rgba(255, 255, 255, 0.50);
-  --text-dim: rgba(255, 255, 255, 0.25);
+  --text-muted: rgba(255, 255, 255, 0.65);
+  --text-dim: rgba(255, 255, 255, 0.48);
 }
 
 @theme inline {

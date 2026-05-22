@@ -46,13 +46,13 @@ const gridFade = {
 };
 
 /* ─── Subheadline pillars ─── */
-const pillars = ["Sites Web", "Contenus", "Accompagnement"];
+const pillars = ["Sites Web", "Création de contenu", "Coaching & Autonomie"];
 
 export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center overflow-hidden bg-black pt-20"
+      className="relative flex min-h-screen items-center overflow-hidden bg-black pt-20 pb-24 lg:pb-32"
       aria-label="Section héroïque"
     >
       {/* ─── Radial gradient backdrop ─── */}
@@ -131,25 +131,6 @@ export default function HeroSection() {
         />
       </motion.svg>
 
-      {/* ─── Large Outline Letter ─── */}
-      <motion.div
-        className="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2 select-none lg:right-16"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2, delay: 1.5 }}
-      >
-        <span
-          className="text-outline font-heading font-black uppercase leading-none"
-          style={{
-            fontSize: "clamp(8rem, 20vw, 22rem)",
-            filter: "blur(1px)",
-          }}
-          aria-hidden="true"
-        >
-          B
-        </span>
-      </motion.div>
-
       {/* ─── Content ─── */}
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 lg:px-12">
         <div className="grid grid-cols-12 gap-x-4">
@@ -163,7 +144,7 @@ export default function HeroSection() {
               initial="hidden"
               animate="visible"
             >
-              Expert Digital — Bouches-du-Rhône
+              Expert Digital - Bouches-du-Rhône
             </motion.p>
 
             {/* ─── Headline ─── */}
@@ -241,19 +222,31 @@ export default function HeroSection() {
               initial="hidden"
               animate="visible"
             >
-              {pillars.map((pillar, i) => (
-                <span key={pillar} className="flex items-center gap-x-8">
-                  <span className="flex items-center gap-x-3">
-                    <span className="h-px w-4 bg-text-dim" aria-hidden="true" />
-                    <span className="font-heading text-[11px] font-semibold uppercase tracking-[0.35em] text-text-muted sm:text-xs">
-                      {pillar}
-                    </span>
+              {pillars.map((pillar, i) => {
+                let href = "#services";
+                if (pillar === "Création de contenu") {
+                  href = "/services/gestion-reseaux-sociaux-marseille";
+                } else if (pillar === "Coaching & Autonomie") {
+                  href = "/services/accompagnement-digital-provence";
+                }
+
+                return (
+                  <span key={pillar} className="flex items-center gap-x-8">
+                    <Link
+                      href={href}
+                      className="group/pillar flex items-center gap-x-3 transition-colors duration-300"
+                    >
+                      <span className="h-px w-4 bg-text-dim transition-all duration-300 group-hover/pillar:w-6 group-hover/pillar:bg-white" aria-hidden="true" />
+                      <span className="font-heading text-[11px] font-semibold uppercase tracking-[0.35em] text-text-muted transition-colors duration-300 group-hover/pillar:text-white sm:text-xs">
+                        {pillar}
+                      </span>
+                    </Link>
+                    {i < pillars.length - 1 && (
+                      <span className="hidden h-3 w-px bg-grid-line-strong sm:block" aria-hidden="true" />
+                    )}
                   </span>
-                  {i < pillars.length - 1 && (
-                    <span className="hidden h-3 w-px bg-grid-line-strong sm:block" aria-hidden="true" />
-                  )}
-                </span>
-              ))}
+                );
+              })}
             </motion.div>
 
             {/* ─── CTA ─── */}
