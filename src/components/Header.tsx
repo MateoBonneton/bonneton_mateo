@@ -10,7 +10,6 @@ import { services } from "@/data/services";
 const navLinks = [
   { href: "/", label: "Accueil" },
   { href: "/#a-propos", label: "À propos" },
-  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -135,18 +134,12 @@ export default function Header() {
             >
               À propos
             </Link>
-            <Link
-              href="/#contact"
-              className="px-4 py-2 text-xs font-medium uppercase tracking-[0.15em] text-text-muted transition-colors duration-300 hover:text-white"
-            >
-              Contact
-            </Link>
 
             <Link
-              href="#contact"
+              href="/#contact"
               className="group relative ml-6 overflow-hidden border border-white px-6 py-2.5 font-heading text-xs font-bold uppercase tracking-[0.15em] text-white transition-all duration-400 hover:bg-white hover:text-black"
             >
-              <span className="relative z-10">Démarrer</span>
+              <span className="relative z-10">Contact</span>
             </Link>
           </nav>
 
@@ -231,11 +224,11 @@ export default function Header() {
                 </Link>
               ))}
               <Link
-                href="#contact"
+                href="/#contact"
                 onClick={() => setMobileOpen(false)}
                 className="mt-4 border border-white px-5 py-3 text-center font-heading text-sm font-bold uppercase tracking-[0.15em] text-white transition-all hover:bg-white hover:text-black"
               >
-                Démarrer
+                Contact
               </Link>
             </nav>
           </motion.div>
