@@ -58,14 +58,14 @@ export const services: Service[] = [
     projects: [
       {
         title: "Site Vitrine WashNGo13",
-        client: "Centre de Lavage Automobile (Martigues)",
+        client: "Centre de Lavage Automobile (Saint-Mitre-les-Remparts)",
         category: "Site Vitrine & Référencement",
         description: "Création complète d'un site vitrine moderne et performant pour un centre de lavage auto. Design moderne, responsive et optimisé pour le référencement local.",
         image: "/images/washngo-v2.png",
       },
       {
         title: "Site Artistica Dalbe",
-        client: "Magasin de Matériel Artistique (Marseille)",
+        client: "Magasin de Matériel Artistique (Saint-Mitre-les-Remparts)",
         category: "Intégration WordPress & Design",
         description: "Création du site internet d'un magasin de matériel artistique pendant mon stage. Du cahier des charges à l'intégration WordPress sous Elementor.",
         image: "/images/siteartistica.png",
@@ -139,7 +139,7 @@ export const services: Service[] = [
       },
       {
         title: "Contenus Artistica Dalbe",
-        client: "Magasin Artistique (Marseille)",
+        client: "Magasin Artistique (Saint-Mitre-les-Remparts)",
         category: "Community Management",
         description: "Création de contenus complets pour les réseaux sociaux : stories, reels, TikToks, posts Instagram pour booster la visibilité de la marque.",
         image: "/images/contenus_artistica.png",
@@ -153,7 +153,7 @@ export const services: Service[] = [
       },
       {
         title: "Logo WashNGo13",
-        client: "WashNGo13 (Martigues)",
+        client: "WashNGo13 (Saint-Mitre-les-Remparts)",
         category: "Identité Visuelle & Branding",
         description: "Création complète de la charte graphique, du logo vectoriel et des déclinaisons pour l'enseigne physique et les supports de communication.",
         image: "/images/logowashngo.png",
