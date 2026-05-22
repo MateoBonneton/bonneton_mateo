@@ -92,7 +92,7 @@ export const services: Service[] = [
     ],
     icon: ShoppingBag,
     features: [
-      "Boutique en ligne complète et évolutive (Shopify, WooCommerce, Custom)",
+      "Boutique en ligne complète et évolutive",
       "Tunnel de commande (Checkout) simplifié et ultra-rapide",
       "Paiements en ligne 100% sécurisés (Stripe, PayPal, CB)",
       "Gestion autonome des stocks, des produits et des commandes",
