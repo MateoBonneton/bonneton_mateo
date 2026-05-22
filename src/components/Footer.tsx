@@ -5,7 +5,7 @@ import { services } from "@/data/services";
 
 const socialLinks = [
   { href: "https://linkedin.com", icon: ExternalLink, label: "LinkedIn" },
-  { href: "https://instagram.com", icon: Camera, label: "Instagram" },
+  { href: "https://www.instagram.com/bonneton_mateo", icon: Camera, label: "Instagram" },
   { href: "mailto:contact@mateo-bonneton.fr", icon: Mail, label: "Email" },
 ];
 
@@ -105,13 +105,13 @@ export default function Footer() {
           </p>
           <div className="flex gap-8">
             <Link
-              href="#"
+              href="/mentions-legales"
               className="text-[11px] tracking-wide text-text-dim transition-colors hover:text-text-muted"
             >
               Mentions légales
             </Link>
             <Link
-              href="#"
+              href="/mentions-legales#confidentialite"
               className="text-[11px] tracking-wide text-text-dim transition-colors hover:text-text-muted"
             >
               Confidentialité
