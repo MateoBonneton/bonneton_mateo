@@ -215,7 +215,7 @@ export const services: Service[] = [
       "Monitoring de sécurité 24/7 contre les attaques & piratages",
       "Améliorations continues de l'UX, du design et du SEO local",
       "Correction ultra-rapide de bugs & assistance technique",
-      "Plusieurs forfaits sans engagement adaptés aux PME et artisans",
+      "Plusieurs forfaits avec ou sans engagement adaptés aux PME et artisans",
     ],
     projects: [],
   },
