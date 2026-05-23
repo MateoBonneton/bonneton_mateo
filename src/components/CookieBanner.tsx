@@ -106,7 +106,7 @@ export default function CookieBanner() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 30, scale: 0.98 }}
           transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="fixed bottom-6 right-6 z-[9990] flex w-[calc(100vw-3rem)] flex-col border border-grid-line-strong bg-[#0d0d0e] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.8)] sm:max-w-[440px]"
+          className="fixed bottom-6 right-6 z-[9990] flex w-[calc(100vw-3rem)] flex-col border border-white bg-gray-900 p-6 shadow-[0_20px_50px_rgba(0,0,0,0.12)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.6)] sm:max-w-[440px]"
         >
           {/* Header */}
           <div className="mb-4 flex items-center justify-between">
@@ -118,7 +118,7 @@ export default function CookieBanner() {
             </div>
             <button
               onClick={handleRefuseAll}
-              className="text-text-dim transition-colors hover:text-white"
+              className="text-gray-400 transition-colors hover:text-accent cursor-pointer"
               title="Fermer et refuser tout"
               aria-label="Fermer et refuser tout"
             >
@@ -129,29 +129,29 @@ export default function CookieBanner() {
           {/* Body */}
           <div className="mb-6">
             {!showCustomizer ? (
-              <p className="text-xs leading-relaxed text-text-muted">
+              <p className="text-xs leading-relaxed text-gray-200">
                 Pour optimiser votre expérience, assurer le bon fonctionnement du formulaire de contact, 
                 et analyser la fréquentation via Google Analytics, ce site utilise des cookies. 
                 Vous pouvez accepter, refuser, ou personnaliser vos choix à tout moment.
               </p>
             ) : (
               <div className="space-y-4 py-2">
-                <p className="text-[11px] leading-relaxed text-text-dim mb-2">
+                <p className="text-[11px] leading-relaxed text-gray-400 mb-2">
                   Sélectionnez les catégories de traceurs que vous acceptez d&apos;activer :
                 </p>
 
                 {/* Necessary cookies */}
-                <div className="flex items-start justify-between border-b border-grid-line pb-3">
+                <div className="flex items-start justify-between border-b border-gray-800 pb-3">
                   <div className="pr-4">
                     <h4 className="font-heading text-[11px] font-bold uppercase tracking-[0.1em] text-white mb-0.5">
                       1. Nécessaires & Formulaires
                     </h4>
-                    <p className="text-[10px] leading-relaxed text-text-dim">
+                    <p className="text-[10px] leading-relaxed text-gray-400">
                       Indispensables pour la sécurité du site, la mémorisation de vos choix et l&apos;envoi sécurisé du formulaire de contact.
                     </p>
                   </div>
                   <div 
-                    className="flex h-5 w-5 shrink-0 items-center justify-center border border-white/20 bg-white/5 text-white/40 cursor-not-allowed select-none"
+                    className="flex h-5 w-5 shrink-0 items-center justify-center border border-gray-400 bg-gray-900/50 text-gray-400 cursor-not-allowed select-none"
                     aria-label="Cookies nécessaires toujours activés"
                   >
                     <Check size={12} strokeWidth={2.5} />
@@ -164,14 +164,14 @@ export default function CookieBanner() {
                     <h4 className="font-heading text-[11px] font-bold uppercase tracking-[0.1em] text-white mb-0.5">
                       2. Mesure d&apos;audience (Google Analytics)
                     </h4>
-                    <p className="text-[10px] leading-relaxed text-text-dim">
+                    <p className="text-[10px] leading-relaxed text-gray-400">
                       Permet d&apos;analyser les visites, de comprendre d&apos;où viennent nos visiteurs et d&apos;améliorer la vitesse et les performances du site.
                     </p>
                   </div>
                   <button
                     onClick={() => setConsentAnalytics(!consentAnalytics)}
                     className={`flex h-5 w-5 shrink-0 items-center justify-center border transition-all duration-200 cursor-pointer bg-black ${
-                      consentAnalytics ? "border-white bg-white text-black" : "border-white/20 hover:border-white"
+                      consentAnalytics ? "border-accent bg-accent text-static-white" : "border-gray-400 hover:border-accent"
                     }`}
                     role="checkbox"
                     aria-checked={consentAnalytics}
@@ -191,13 +191,13 @@ export default function CookieBanner() {
                 <div className="grid grid-cols-2 gap-3">
                   <button
                     onClick={handleAcceptAll}
-                    className="w-full bg-white py-2.5 text-center font-heading text-[10px] font-bold uppercase tracking-[0.15em] text-black transition-colors duration-300 hover:bg-white/90"
+                    className="w-full bg-white border border-white py-2.5 text-center font-heading text-[10px] font-bold uppercase tracking-[0.15em] text-black transition-colors duration-300 hover:bg-accent hover:text-static-white hover:border-accent cursor-pointer"
                   >
                     Accepter tout
                   </button>
                   <button
                     onClick={handleRefuseAll}
-                    className="w-full border border-white/20 bg-transparent py-2.5 text-center font-heading text-[10px] font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:border-white hover:bg-white/[0.03]"
+                    className="w-full border border-gray-400 bg-transparent py-2.5 text-center font-heading text-[10px] font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:border-white hover:bg-white/5 cursor-pointer"
                   >
                     Refuser tout
                   </button>
@@ -205,14 +205,14 @@ export default function CookieBanner() {
                 <div className="flex items-center justify-between text-[10px]">
                   <button
                     onClick={() => setShowCustomizer(true)}
-                    className="inline-flex items-center gap-1.5 font-heading font-semibold uppercase tracking-[0.1em] text-text-dim transition-colors hover:text-white"
+                    className="inline-flex items-center gap-1.5 font-heading font-semibold uppercase tracking-[0.1em] text-gray-400 transition-colors hover:text-accent cursor-pointer"
                   >
                     <Settings size={12} strokeWidth={1.5} />
                     <span>Personnaliser</span>
                   </button>
                   <Link
                     href="/mentions-legales#confidentialite"
-                    className="font-heading font-semibold uppercase tracking-[0.1em] text-text-dim transition-colors hover:text-white underline"
+                    className="font-heading font-semibold uppercase tracking-[0.1em] text-gray-400 transition-colors hover:text-accent cursor-pointer underline"
                   >
                     Politique de confidentialité
                   </Link>
@@ -222,20 +222,20 @@ export default function CookieBanner() {
               <>
                 <button
                   onClick={handleSaveCustom}
-                  className="w-full bg-white py-2.5 text-center font-heading text-[10px] font-bold uppercase tracking-[0.15em] text-black transition-colors duration-300 hover:bg-white/90"
+                  className="w-full bg-white border border-white py-2.5 text-center font-heading text-[10px] font-bold uppercase tracking-[0.15em] text-black transition-colors duration-300 hover:bg-accent hover:text-static-white hover:border-accent cursor-pointer"
                 >
                   Enregistrer mes choix
                 </button>
                 <div className="flex items-center justify-between text-[10px]">
                   <button
                     onClick={() => setShowCustomizer(false)}
-                    className="font-heading font-semibold uppercase tracking-[0.1em] text-text-dim transition-colors hover:text-white underline"
+                    className="font-heading font-semibold uppercase tracking-[0.1em] text-gray-400 transition-colors hover:text-accent cursor-pointer underline"
                   >
                     Retour aux options rapides
                   </button>
                   <Link
                     href="/mentions-legales#confidentialite"
-                    className="font-heading font-semibold uppercase tracking-[0.1em] text-text-dim transition-colors hover:text-white underline"
+                    className="font-heading font-semibold uppercase tracking-[0.1em] text-gray-400 transition-colors hover:text-accent cursor-pointer underline"
                   >
                     Politique de confidentialité
                   </Link>
