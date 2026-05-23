@@ -67,9 +67,9 @@ export default function ProcessSection() {
               <motion.p
                 custom={0}
                 variants={fadeUp}
-                className="mb-6 font-heading text-[11px] font-semibold uppercase tracking-[0.4em] text-text-dim"
+                className="mb-6 font-heading text-[11px] font-semibold uppercase tracking-[0.4em]"
               >
-                ( 02 ) - Processus
+                <span className="text-accent">( 02 )</span> <span className="text-text-dim">- Processus</span>
               </motion.p>
               <motion.h2
                 custom={0.1}
@@ -88,7 +88,7 @@ export default function ProcessSection() {
               <div
                 className="pointer-events-none absolute left-0 right-0 top-[4.5rem] hidden h-px lg:block"
                 style={{
-                  background: "linear-gradient(90deg, transparent 5%, rgba(255,255,255,0.08) 15%, rgba(255,255,255,0.08) 85%, transparent 95%)",
+                  background: "linear-gradient(90deg, transparent 5%, var(--grid-line-strong) 15%, var(--grid-line-strong) 85%, transparent 95%)",
                 }}
                 aria-hidden="true"
               />
@@ -101,12 +101,12 @@ export default function ProcessSection() {
                   viewport={{ once: true, margin: "-50px" }}
                   custom={0.1 + i * 0.08}
                   variants={fadeUp}
-                  className="card-draw group relative bg-black p-8 transition-colors duration-500 hover:bg-white/[0.02] lg:p-10"
+                  className="card-draw group relative bg-gray-900 p-8 transition-colors duration-500 hover:bg-accent-light lg:p-10"
                 >
                   {/* Step number in bordered box */}
                   <div className="mb-8 flex items-center gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center border border-grid-line-strong transition-all duration-500 group-hover:border-white/30">
-                      <p className="font-heading text-lg font-black tracking-tight text-white">
+                    <div className="flex h-14 w-14 items-center justify-center border border-grid-line-strong transition-all duration-500 group-hover:border-accent group-hover:bg-accent-light group-hover:shadow-[0_0_20px_var(--accent-light)]">
+                      <p className="font-heading text-lg font-black tracking-tight text-white transition-colors group-hover:text-accent">
                         {step.number}
                       </p>
                     </div>
@@ -121,7 +121,7 @@ export default function ProcessSection() {
                   </h3>
 
                   {/* Decorative line */}
-                  <div className="mb-4 h-px w-6 bg-grid-line-strong transition-all duration-500 group-hover:w-10 group-hover:bg-white/25" />
+                  <div className="mb-4 h-px w-6 bg-grid-line-strong transition-all duration-500 group-hover:w-10 group-hover:bg-accent" />
 
                   <p className="text-sm leading-relaxed text-text-muted">
                     {step.description}

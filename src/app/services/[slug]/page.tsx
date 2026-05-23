@@ -72,7 +72,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               {/* Back link */}
               <Link
                 href="/"
-                className="glow-line mb-16 inline-flex items-center gap-2 pb-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-text-dim transition-colors hover:text-white"
+                className="glow-line mb-16 inline-flex items-center gap-2 pb-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-text-dim transition-colors hover:text-accent"
               >
                 <ArrowLeft size={13} strokeWidth={2} />
                 Retour
@@ -89,8 +89,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 </span>
 
                 {/* Service Icon */}
-                <div className="mb-10 flex h-14 w-14 items-center justify-center border border-grid-line-strong">
-                  <Icon size={24} strokeWidth={1.5} className="text-white" />
+                <div className="mb-10 flex h-14 w-14 items-center justify-center border border-grid-line-strong transition-all duration-300 hover:border-accent hover:bg-accent-light hover:shadow-[0_0_20px_var(--accent-light)]">
+                  <Icon size={24} strokeWidth={1.5} className="text-white transition-colors hover:text-accent" />
                 </div>
 
                 {/* Title */}
@@ -119,12 +119,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   {service.features.map((feature) => (
                     <div
                       key={feature}
-                      className="card-draw flex items-start gap-4 bg-black p-6 transition-colors duration-400 hover:bg-white/[0.02]"
+                      className="card-draw flex items-start gap-4 bg-gray-900 p-6 transition-colors duration-400 hover:bg-accent-light"
                     >
                       <Check
                         size={14}
                         strokeWidth={2.5}
-                        className="mt-0.5 shrink-0 text-white"
+                        className="mt-0.5 shrink-0 text-accent"
                       />
                       <span className="text-sm text-text-muted">{feature}</span>
                     </div>
@@ -142,11 +142,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
                     {service.projects.map((project) => (
                       <div 
                         key={project.title} 
-                        className="group relative flex flex-col overflow-hidden border border-white/[0.08] bg-[#0d0d0e] p-5 transition-all duration-500 hover:border-white/20 hover:bg-[#141415] hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+                        className="group relative flex flex-col overflow-hidden border border-grid-line-strong bg-gray-900 p-5 transition-all duration-500 hover:border-accent hover:bg-accent-light hover:shadow-[0_10px_30px_var(--accent-light)]"
                       >
                         {/* Subtle top-right accent glow on hover */}
                         <div 
-                          className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-white opacity-0 blur-[80px] transition-opacity duration-700 group-hover:opacity-[0.03]" 
+                          className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-accent opacity-0 blur-[80px] transition-opacity duration-700 group-hover:opacity-[0.08]" 
                           aria-hidden="true" 
                         />
                         
@@ -174,7 +174,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                             {project.client}
                           </p>
                           {/* Decorative small separator */}
-                          <div className="my-4 h-px w-6 bg-grid-line-strong transition-all duration-500 group-hover:w-12 group-hover:bg-white/30" />
+                          <div className="my-4 h-px w-6 bg-grid-line-strong transition-all duration-500 group-hover:w-12 group-hover:bg-accent" />
                           <p className="text-sm leading-relaxed text-text-muted/80">
                             {project.description}
                           </p>
@@ -188,19 +188,19 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   <p className="mb-10 text-[11px] font-semibold uppercase tracking-[0.4em] text-text-dim">
                     ( Projets ) - Réalisations récentes
                   </p>
-                  <div className="relative overflow-hidden border border-grid-line-strong bg-black/40 p-8 sm:p-12 text-center backdrop-blur-sm">
+                  <div className="relative overflow-hidden border border-grid-line-strong bg-gray-900/40 p-8 sm:p-12 text-center backdrop-blur-sm">
                     {/* Grid pattern background effect */}
                     <div 
-                      className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                      className="absolute inset-0 opacity-[0.05] pointer-events-none"
                       style={{
-                        backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+                        backgroundImage: "radial-gradient(circle, var(--accent) 1px, transparent 1px)",
                         backgroundSize: "24px 24px"
                       }}
                       aria-hidden="true"
                     />
                     
                     <div className="relative z-10 mx-auto max-w-lg">
-                      <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center border border-dashed border-white/20 text-white/50">
+                      <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center border border-dashed border-accent/40 text-accent">
                         <Icon size={18} strokeWidth={1.5} />
                       </div>
                       
@@ -216,7 +216,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                       <div className="mt-8 flex justify-center">
                         <Link 
                           href="/#contact" 
-                          className="inline-flex items-center gap-2 border border-white bg-white px-6 py-3 text-[10px] font-semibold uppercase tracking-widest text-black transition-all duration-400 hover:bg-black hover:text-white"
+                          className="inline-flex items-center gap-2 border border-white bg-white px-6 py-3 text-[10px] font-semibold uppercase tracking-widest text-black transition-all duration-400 hover:bg-accent hover:border-accent hover:text-static-white"
                         >
                           <span>Lancer mon projet</span>
                           <ArrowRight size={12} strokeWidth={2.5} />

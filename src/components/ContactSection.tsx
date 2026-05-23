@@ -38,9 +38,9 @@ export default function ContactSection() {
               <motion.p
                 custom={0}
                 variants={fadeUp}
-                className="mb-6 text-center font-heading text-[11px] font-semibold uppercase tracking-[0.4em] text-text-dim"
+                className="mb-6 text-center font-heading text-[11px] font-semibold uppercase tracking-[0.4em]"
               >
-                ( 04 ) - Contact
+                <span className="text-accent">( 04 )</span> <span className="text-text-dim">- Contact</span>
               </motion.p>
               <motion.h2
                 custom={0.1}
@@ -68,7 +68,7 @@ export default function ContactSection() {
                 onSubmit={(e) => e.preventDefault()}
               >
                 <div className="mb-1 grid grid-cols-1 gap-px bg-grid-line sm:grid-cols-2">
-                  <div className="focus-line-wrap bg-black p-1">
+                  <div className="focus-line-wrap bg-gray-900 p-1">
                     <label
                       htmlFor="contact-name"
                       className="mb-2 block px-3 pt-3 font-heading text-[10px] font-semibold uppercase tracking-[0.25em] text-text-dim"
@@ -82,7 +82,7 @@ export default function ContactSection() {
                       className="w-full bg-transparent px-3 pb-4 pt-1 text-sm text-white placeholder-text-dim outline-none"
                     />
                   </div>
-                  <div className="focus-line-wrap bg-black p-1">
+                  <div className="focus-line-wrap bg-gray-900 p-1">
                     <label
                       htmlFor="contact-email"
                       className="mb-2 block px-3 pt-3 font-heading text-[10px] font-semibold uppercase tracking-[0.25em] text-text-dim"
@@ -99,7 +99,7 @@ export default function ContactSection() {
                 </div>
 
                 <div className="mb-1 bg-grid-line p-px">
-                  <div className="focus-line-wrap bg-black p-1">
+                  <div className="focus-line-wrap bg-gray-900 p-1">
                     <label
                       htmlFor="contact-service"
                       className="mb-2 block px-3 pt-3 font-heading text-[10px] font-semibold uppercase tracking-[0.25em] text-text-dim"
@@ -108,20 +108,20 @@ export default function ContactSection() {
                     </label>
                     <select
                       id="contact-service"
-                      className="w-full bg-black px-3 pb-4 pt-1 text-sm text-text-muted outline-none"
+                      className="w-full bg-transparent px-3 pb-4 pt-1 text-sm text-text-muted outline-none"
                     >
-                      <option value="">Sélectionnez un service</option>
-                      <option value="site-vitrine">Site Vitrine sur mesure</option>
-                      <option value="site-ecommerce">Site E-Commerce sur mesure</option>
-                      <option value="reseaux-sociaux">Création de contenu</option>
-                      <option value="accompagnement">Coaching & Autonomie</option>
-                      <option value="maintenance">Maintenance & Support</option>
+                      <option value="" className="bg-black text-white">Sélectionnez un service</option>
+                      <option value="site-vitrine" className="bg-black text-white">Site Vitrine sur mesure</option>
+                      <option value="site-ecommerce" className="bg-black text-white">Site E-Commerce sur mesure</option>
+                      <option value="reseaux-sociaux" className="bg-black text-white">Création de contenu</option>
+                      <option value="accompagnement" className="bg-black text-white">Coaching & Autonomie</option>
+                      <option value="maintenance" className="bg-black text-white">Maintenance & Support</option>
                     </select>
                   </div>
                 </div>
 
                 <div className="mb-8 bg-grid-line p-px">
-                  <div className="focus-line-wrap bg-black p-1">
+                  <div className="focus-line-wrap bg-gray-900 p-1">
                     <label
                       htmlFor="contact-message"
                       className="mb-2 block px-3 pt-3 font-heading text-[10px] font-semibold uppercase tracking-[0.25em] text-text-dim"

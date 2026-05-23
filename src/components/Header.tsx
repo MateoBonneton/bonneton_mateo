@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { services } from "@/data/services";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { href: "/", label: "Accueil" },
@@ -141,16 +142,23 @@ export default function Header() {
             >
               <span className="relative z-10">Contact</span>
             </Link>
+
+            <div className="ml-5">
+              <ThemeToggle />
+            </div>
           </nav>
 
-          {/* Mobile Toggle */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex items-center justify-center p-2 text-white md:hidden"
-            aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Actions */}
+          <div className="flex items-center gap-3 md:hidden">
+            <ThemeToggle />
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="flex items-center justify-center p-2 text-white animate-fade-in"
+              aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            >
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 

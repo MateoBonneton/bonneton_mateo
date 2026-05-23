@@ -70,13 +70,13 @@ export default function ServicesSection() {
                   >
                     <Link
                       href={`/services/${service.slug}`}
-                      className="card-draw group relative flex flex-col bg-black p-10 transition-all duration-500 hover:bg-white/[0.02] lg:p-12"
+                      className="card-draw group relative flex flex-col bg-gray-900 p-10 transition-all duration-500 hover:bg-accent-light lg:p-12"
                     >
                       {/* Hover top gradient */}
                       <div
                         className="pointer-events-none absolute inset-x-0 top-0 h-24 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
                         style={{
-                          background: "linear-gradient(to bottom, rgba(255,255,255,0.03) 0%, transparent 100%)",
+                          background: "linear-gradient(to bottom, var(--accent-light) 0%, transparent 100%)",
                         }}
                         aria-hidden="true"
                       />
@@ -90,8 +90,8 @@ export default function ServicesSection() {
                         0{i + 1}
                       </span>
 
-                      <div className="mb-8 flex h-12 w-12 items-center justify-center border border-grid-line-strong transition-all duration-500 group-hover:border-white/30 group-hover:bg-white/[0.04] group-hover:shadow-[0_0_20px_rgba(255,255,255,0.04)]">
-                        <Icon size={20} strokeWidth={1.5} className="text-white" />
+                      <div className="mb-8 flex h-12 w-12 items-center justify-center border border-grid-line-strong transition-all duration-500 group-hover:border-accent group-hover:bg-accent-light group-hover:shadow-[0_0_20px_var(--accent-light)]">
+                        <Icon size={20} strokeWidth={1.5} className="text-white transition-colors group-hover:text-accent" />
                       </div>
 
                       <h3 className="mb-4 font-heading text-lg font-bold uppercase tracking-[0.08em] text-white">
@@ -99,13 +99,13 @@ export default function ServicesSection() {
                       </h3>
 
                       {/* Decorative line */}
-                      <div className="mb-4 h-px w-8 bg-grid-line-strong transition-all duration-500 group-hover:w-12 group-hover:bg-white/30" />
+                      <div className="mb-4 h-px w-8 bg-grid-line-strong transition-all duration-500 group-hover:w-12 group-hover:bg-accent" />
 
                       <p className="mb-10 max-w-sm text-sm leading-relaxed text-text-muted">
                         {service.description.slice(0, 140)}…
                       </p>
 
-                      <div className="glow-line mt-auto inline-flex items-center gap-2 self-start pb-1 font-heading text-[11px] font-semibold uppercase tracking-[0.2em] text-text-dim transition-colors duration-500 group-hover:text-white">
+                      <div className="glow-line mt-auto inline-flex items-center gap-2 self-start pb-1 font-heading text-[11px] font-semibold uppercase tracking-[0.2em] text-text-dim transition-colors duration-500 group-hover:text-accent">
                         <span>Découvrir</span>
                         <ArrowRight
                           size={12}
@@ -128,13 +128,13 @@ export default function ServicesSection() {
               >
                 <Link
                   href="#contact"
-                  className="card-draw group relative flex flex-col bg-black p-10 transition-all duration-500 hover:bg-white/[0.02] lg:p-12"
+                  className="card-draw group relative flex flex-col bg-gray-900 p-10 transition-all duration-500 hover:bg-accent-light lg:p-12"
                 >
                   {/* Hover top gradient */}
                   <div
                     className="pointer-events-none absolute inset-x-0 top-0 h-24 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
                     style={{
-                      background: "linear-gradient(to bottom, rgba(255,255,255,0.03) 0%, transparent 100%)",
+                      background: "linear-gradient(to bottom, var(--accent-light) 0%, transparent 100%)",
                     }}
                     aria-hidden="true"
                   />
@@ -148,8 +148,8 @@ export default function ServicesSection() {
                     06
                   </span>
 
-                  <div className="mb-8 flex h-12 w-12 items-center justify-center border border-dashed border-grid-line-strong transition-all duration-500 group-hover:border-white/30 group-hover:bg-white/[0.04] group-hover:shadow-[0_0_20px_rgba(255,255,255,0.04)]">
-                    <Sparkles size={20} strokeWidth={1.5} className="text-white/60 group-hover:text-white" />
+                  <div className="mb-8 flex h-12 w-12 items-center justify-center border border-dashed border-grid-line-strong transition-all duration-500 group-hover:border-accent group-hover:bg-accent-light group-hover:shadow-[0_0_20px_var(--accent-light)]">
+                    <Sparkles size={20} strokeWidth={1.5} className="text-text-dim transition-colors group-hover:text-accent" />
                   </div>
 
                   <h3 className="mb-4 font-heading text-lg font-bold uppercase tracking-[0.08em] text-white">
@@ -157,13 +157,13 @@ export default function ServicesSection() {
                   </h3>
 
                   {/* Decorative line */}
-                  <div className="mb-4 h-px w-8 bg-grid-line-strong transition-all duration-500 group-hover:w-12 group-hover:bg-white/30" />
+                  <div className="mb-4 h-px w-8 bg-grid-line-strong transition-all duration-500 group-hover:w-12 group-hover:bg-accent" />
 
                   <p className="mb-10 max-w-sm text-sm leading-relaxed text-text-muted">
                     Vous avez un besoin digital spécifique ou une idée innovante en tête ? Discutons-en ensemble pour concevoir un projet 100% sur mesure.
                   </p>
 
-                  <div className="glow-line mt-auto inline-flex items-center gap-2 self-start pb-1 font-heading text-[11px] font-semibold uppercase tracking-[0.2em] text-text-dim transition-colors duration-500 group-hover:text-white">
+                  <div className="glow-line mt-auto inline-flex items-center gap-2 self-start pb-1 font-heading text-[11px] font-semibold uppercase tracking-[0.2em] text-text-dim transition-colors duration-500 group-hover:text-accent">
                     <span>Me contacter</span>
                     <ArrowRight
                       size={12}

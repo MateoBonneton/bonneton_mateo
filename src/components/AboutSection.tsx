@@ -47,9 +47,9 @@ export default function AboutSection() {
               <motion.p
                 custom={0}
                 variants={fadeUp}
-                className="mb-6 font-heading text-[11px] font-semibold uppercase tracking-[0.4em] text-text-dim"
+                className="mb-6 font-heading text-[11px] font-semibold uppercase tracking-[0.4em]"
               >
-                ( 03 ) - À propos
+                <span className="text-accent">( 03 )</span> <span className="text-text-dim">- À propos</span>
               </motion.p>
               <motion.h2
                 custom={0.1}
@@ -100,7 +100,7 @@ export default function AboutSection() {
                   {stats.map((stat) => (
                     <div key={stat.label} className="bg-black py-8 pr-6">
                       {/* Decorative top line */}
-                      <div className="mb-5 h-px w-6 bg-white/20" />
+                      <div className="mb-5 h-px w-6 bg-accent" />
                       <p className="font-heading text-3xl font-black tracking-tight text-white lg:text-4xl">
                         {stat.value}
                       </p>
@@ -123,7 +123,7 @@ export default function AboutSection() {
               >
                 <div className="group relative">
                   {/* Outer frame with offset */}
-                  <div className="absolute -inset-3 border border-grid-line-strong transition-all duration-700 group-hover:border-white/20" aria-hidden="true" />
+                  <div className="absolute -inset-3 border border-grid-line-strong transition-all duration-700 group-hover:border-accent/40" aria-hidden="true" />
 
                   {/* Photo container */}
                   <div className="relative h-80 w-72 overflow-hidden lg:h-[28rem] lg:w-[22rem]">
@@ -147,10 +147,10 @@ export default function AboutSection() {
                   </div>
 
                   {/* Corner accents (larger) */}
-                  <div className="absolute -top-3 -left-3 h-6 w-6 border-t border-l border-white/20 transition-all duration-500 group-hover:h-8 group-hover:w-8 group-hover:border-white/40" aria-hidden="true" />
-                  <div className="absolute -top-3 -right-3 h-6 w-6 border-t border-r border-white/20 transition-all duration-500 group-hover:h-8 group-hover:w-8 group-hover:border-white/40" aria-hidden="true" />
-                  <div className="absolute -bottom-3 -left-3 h-6 w-6 border-b border-l border-white/20 transition-all duration-500 group-hover:h-8 group-hover:w-8 group-hover:border-white/40" aria-hidden="true" />
-                  <div className="absolute -bottom-3 -right-3 h-6 w-6 border-b border-r border-white/20 transition-all duration-500 group-hover:h-8 group-hover:w-8 group-hover:border-white/40" aria-hidden="true" />
+                  <div className="absolute -top-3 -left-3 h-6 w-6 border-t border-l border-accent/20 transition-all duration-500 group-hover:h-8 group-hover:w-8 group-hover:border-accent" aria-hidden="true" />
+                  <div className="absolute -top-3 -right-3 h-6 w-6 border-t border-r border-accent/20 transition-all duration-500 group-hover:h-8 group-hover:w-8 group-hover:border-accent" aria-hidden="true" />
+                  <div className="absolute -bottom-3 -left-3 h-6 w-6 border-b border-l border-accent/20 transition-all duration-500 group-hover:h-8 group-hover:w-8 group-hover:border-accent" aria-hidden="true" />
+                  <div className="absolute -bottom-3 -right-3 h-6 w-6 border-b border-r border-accent/20 transition-all duration-500 group-hover:h-8 group-hover:w-8 group-hover:border-accent" aria-hidden="true" />
 
                   {/* Name label */}
                   <div className="absolute -bottom-3 left-6 z-10 bg-black px-4 py-1">

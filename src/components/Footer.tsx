@@ -30,12 +30,11 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-grid-line-strong bg-black">
       {/* Large background outline text */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center" aria-hidden="true">
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center animate-fade-in" aria-hidden="true">
         <span
-          className="text-outline select-none font-heading font-black uppercase leading-none"
+          className="text-outline select-none font-heading font-black uppercase leading-none opacity-[0.03] dark:opacity-[0.08]"
           style={{
             fontSize: "clamp(5rem, 14vw, 14rem)",
-            opacity: 0.4,
           }}
         >
           BONNETON
@@ -72,7 +71,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="flex h-9 w-9 items-center justify-center border border-grid-line text-text-dim transition-all duration-300 hover:border-white/30 hover:text-white hover:bg-white/[0.03]"
+                    className="flex h-9 w-9 items-center justify-center border border-grid-line text-text-dim transition-all duration-300 hover:border-accent hover:text-accent hover:bg-accent-light"
                   >
                     <Icon size={14} strokeWidth={1.5} />
                   </a>

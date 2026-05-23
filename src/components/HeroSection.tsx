@@ -60,7 +60,7 @@ export default function HeroSection() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 30% 50%, rgba(255,255,255,0.02) 0%, transparent 70%)",
+            "radial-gradient(ellipse 60% 50% at 30% 50%, var(--accent-light) 0%, transparent 70%)",
         }}
         aria-hidden="true"
       />
@@ -89,7 +89,7 @@ export default function HeroSection() {
           y1="0"
           x2="100%"
           y2="60%"
-          stroke="rgba(255, 255, 255, 0.04)"
+          stroke="var(--grid-line)"
           strokeWidth="1"
           variants={{
             hidden: { pathLength: 0 },
@@ -104,7 +104,7 @@ export default function HeroSection() {
           y1="0"
           x2="100%"
           y2="50%"
-          stroke="rgba(255, 255, 255, 0.025)"
+          stroke="var(--grid-line)"
           strokeWidth="1"
           variants={{
             hidden: { pathLength: 0 },
@@ -119,7 +119,7 @@ export default function HeroSection() {
           y1="75%"
           x2="25%"
           y2="100%"
-          stroke="rgba(255, 255, 255, 0.03)"
+          stroke="var(--grid-line)"
           strokeWidth="1"
           variants={{
             hidden: { pathLength: 0 },
@@ -206,7 +206,7 @@ export default function HeroSection() {
 
             {/* ─── Decorative Line ─── */}
             <motion.div
-              className="mb-8 h-px origin-left bg-white lg:mb-10"
+              className="mb-8 h-px origin-left bg-accent lg:mb-10"
               style={{ maxWidth: "80px" }}
               custom={1.2}
               variants={lineGrow}
@@ -236,8 +236,8 @@ export default function HeroSection() {
                       href={href}
                       className="group/pillar flex items-center gap-x-3 transition-colors duration-300"
                     >
-                      <span className="h-px w-4 bg-text-dim transition-all duration-300 group-hover/pillar:w-6 group-hover/pillar:bg-white" aria-hidden="true" />
-                      <span className="font-heading text-[11px] font-semibold uppercase tracking-[0.35em] text-text-muted transition-colors duration-300 group-hover/pillar:text-white sm:text-xs">
+                      <span className="h-px w-4 bg-text-dim transition-all duration-300 group-hover/pillar:w-6 group-hover/pillar:bg-accent" aria-hidden="true" />
+                      <span className="font-heading text-[11px] font-semibold uppercase tracking-[0.35em] text-text-muted transition-colors duration-300 group-hover/pillar:text-accent sm:text-xs">
                         {pillar}
                       </span>
                     </Link>

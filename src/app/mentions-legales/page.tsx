@@ -39,7 +39,7 @@ export default function MentionsLegalesPage() {
               {/* Back link */}
               <Link
                 href="/"
-                className="glow-line mb-16 inline-flex items-center gap-2 pb-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-text-dim transition-colors hover:text-white"
+                className="glow-line mb-16 inline-flex items-center gap-2 pb-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-text-dim transition-colors hover:text-accent"
               >
                 <ArrowLeft size={13} strokeWidth={2} />
                 Retour à l&apos;accueil
@@ -47,8 +47,8 @@ export default function MentionsLegalesPage() {
 
               {/* Header */}
               <div className="mb-20">
-                <div className="mb-6 flex h-12 w-12 items-center justify-center border border-grid-line-strong">
-                  <Shield size={20} strokeWidth={1.5} className="text-white" />
+                <div className="mb-6 flex h-12 w-12 items-center justify-center border border-grid-line-strong transition-all duration-300 hover:border-accent hover:bg-accent-light hover:shadow-[0_0_20px_var(--accent-light)]">
+                  <Shield size={20} strokeWidth={1.5} className="text-white transition-colors hover:text-accent" />
                 </div>
                 <h1
                   className="font-heading font-black uppercase leading-[0.9] tracking-tight text-white"
@@ -69,7 +69,7 @@ export default function MentionsLegalesPage() {
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                   <div>
                     <h2 className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-text-dim">
-                      ( 01 ) Éditeur du site
+                      <span className="text-accent">( 01 )</span> Éditeur du site
                     </h2>
                   </div>
                   <div className="md:col-span-2">
@@ -101,7 +101,7 @@ export default function MentionsLegalesPage() {
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                   <div>
                     <h2 className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-text-dim">
-                      ( 02 ) Hébergement
+                      <span className="text-accent">( 02 )</span> Hébergement
                     </h2>
                   </div>
                   <div className="md:col-span-2">
@@ -125,7 +125,7 @@ export default function MentionsLegalesPage() {
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                   <div>
                     <h2 className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-text-dim">
-                      ( 03 ) Propriété
+                      <span className="text-accent">( 03 )</span> Propriété
                     </h2>
                   </div>
                   <div className="md:col-span-2">
@@ -143,7 +143,7 @@ export default function MentionsLegalesPage() {
                 <div id="confidentialite" className="grid grid-cols-1 gap-6 md:grid-cols-3 scroll-mt-24">
                   <div>
                     <h2 className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-text-dim">
-                      ( 04 ) CGU &amp; Données
+                      <span className="text-accent">( 04 )</span> CGU &amp; Données
                     </h2>
                   </div>
                   <div className="md:col-span-2">
