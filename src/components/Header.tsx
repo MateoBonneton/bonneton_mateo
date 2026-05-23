@@ -52,13 +52,17 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-3">
-            <Image
+            {/* Light Mode Logo (Black) */}
+            <img
+              src="/images/bonneton_mateo_logo_black_trans.png"
+              alt="Matéo Bonneton - Expert Digital"
+              className="h-9 w-9 object-contain transition-opacity duration-300 group-hover:opacity-80 dark:hidden"
+            />
+            {/* Dark Mode Logo (White) */}
+            <img
               src="/images/bonneton_mateo_logo_white_trans.png"
               alt="Matéo Bonneton - Expert Digital"
-              width={36}
-              height={36}
-              priority
-              className="object-contain transition-opacity duration-300 group-hover:opacity-80 invert dark:invert-0"
+              className="hidden h-9 w-9 object-contain transition-opacity duration-300 group-hover:opacity-80 dark:block"
             />
             <span className="hidden font-heading text-sm font-semibold uppercase tracking-[0.15em] text-white transition-colors duration-300 group-hover:text-accent sm:inline">
               Matéo Bonneton
