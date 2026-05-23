@@ -47,24 +47,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-6 md:col-span-5">
             <Link href="/" className="group flex items-center gap-3">
-              <div className="relative h-7 w-7">
-                {/* Light Mode Logo (Black) */}
-                <Image
-                  src="/images/bonneton_mateo_logo_black_trans.png"
-                  alt="Matéo Bonneton"
-                  fill
-                  sizes="28px"
-                  className="object-contain transition-opacity duration-300 group-hover:opacity-80 dark:hidden"
-                />
-                {/* Dark Mode Logo (White) */}
-                <Image
-                  src="/images/bonneton_mateo_logo_white_trans.png"
-                  alt="Matéo Bonneton"
-                  fill
-                  sizes="28px"
-                  className="hidden object-contain transition-opacity duration-300 group-hover:opacity-80 dark:block"
-                />
-              </div>
+              <Image
+                src="/images/bonneton_mateo_logo_white_trans.png"
+                alt="Matéo Bonneton"
+                width={28}
+                height={28}
+                className="object-contain transition-opacity duration-300 group-hover:opacity-80 invert dark:invert-0"
+              />
               <span className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-white transition-colors duration-300 group-hover:text-accent">
                 Matéo Bonneton
               </span>
