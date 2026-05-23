@@ -18,7 +18,22 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("light");
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Track and synchronize theme state for logo swap
+  useEffect(() => {
+    const isDark = document.documentElement.classList.contains("dark");
+    setTheme(isDark ? "dark" : "light");
+
+    const handleThemeChange = () => {
+      const currentIsDark = document.documentElement.classList.contains("dark");
+      setTheme(currentIsDark ? "dark" : "light");
+    };
+
+    window.addEventListener("theme-change", handleThemeChange);
+    return () => window.removeEventListener("theme-change", handleThemeChange);
+  }, []);
 
   // Track scroll for header backdrop intensity
   useEffect(() => {
@@ -52,12 +67,15 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-3">
-            <img
-              src="/images/bonneton_mateo_logo_white_trans.png"
+            <Image
+              src={theme === "light" ? "/images/bonneton_mateo_logo_black_trans.png" : "/images/bonneton_mateo_logo_white_trans.png"}
               alt="Matéo Bonneton - Expert Digital"
-              className="h-9 w-9 object-contain transition-opacity duration-300 group-hover:opacity-80 brightness-0 dark:brightness-100"
+              width={36}
+              height={36}
+              priority
+              className="transition-opacity duration-300 group-hover:opacity-80"
             />
-            <span className="hidden font-heading text-sm font-semibold uppercase tracking-[0.15em] text-white transition-colors duration-300 group-hover:text-accent sm:inline">
+            <span className="hidden font-heading text-sm font-semibold uppercase tracking-[0.15em] text-white sm:inline">
               Matéo Bonneton
             </span>
           </Link>
@@ -76,7 +94,7 @@ export default function Header() {
               <button
                 onClick={() => setServicesOpen(!servicesOpen)}
                 onMouseEnter={() => setServicesOpen(true)}
-                className="flex items-center gap-1.5 px-4 py-2 text-xs font-medium uppercase tracking-[0.15em] text-text-muted transition-colors duration-300 hover:text-accent group cursor-pointer"
+                className="flex items-center gap-1.5 px-4 py-2 text-xs font-medium uppercase tracking-[0.15em] text-text-muted transition-colors duration-300 hover:text-accent cursor-pointer"
                 aria-expanded={servicesOpen}
                 aria-haspopup="true"
               >
@@ -84,7 +102,7 @@ export default function Header() {
                 <ChevronDown
                   size={12}
                   strokeWidth={2}
-                  className={`transition-transform duration-300 ${servicesOpen ? "rotate-180 text-accent" : "group-hover:text-accent"}`}
+                  className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}
                 />
               </button>
 
@@ -95,7 +113,7 @@ export default function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
-                    className="absolute left-0 top-full mt-2 w-80 border border-grid-line-strong border-t-accent bg-black/98 backdrop-blur-xl shadow-2xl"
+                    className="absolute left-0 top-full mt-2 w-80 border border-grid-line-strong bg-black/98 backdrop-blur-xl"
                     onMouseLeave={() => setServicesOpen(false)}
                   >
                     {services.map((service, i) => {
@@ -114,7 +132,7 @@ export default function Header() {
                             <span className="block font-heading text-xs font-semibold uppercase tracking-[0.1em] text-gray-400 transition-colors group-hover:text-accent">
                               {service.shortTitle}
                             </span>
-                            <span className="mt-0.5 block text-[11px] leading-relaxed text-text-dim transition-colors group-hover:text-white">
+                            <span className="mt-0.5 block text-[11px] leading-relaxed text-text-dim transition-colors group-hover:text-text-muted">
                               {service.title}
                             </span>
                           </div>
@@ -135,7 +153,7 @@ export default function Header() {
 
             <Link
               href="/#contact"
-              className="group relative ml-6 overflow-hidden border border-white px-6 py-2.5 font-heading text-xs font-bold uppercase tracking-[0.15em] text-white transition-all duration-400 hover:border-accent hover:bg-accent hover:text-static-white cursor-pointer"
+              className="group relative ml-6 overflow-hidden border border-white px-6 py-2.5 font-heading text-xs font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:bg-accent hover:text-static-white hover:border-accent cursor-pointer"
             >
               <span className="relative z-10">Contact</span>
             </Link>
@@ -182,13 +200,13 @@ export default function Header() {
               <div className="border-b border-grid-line">
                 <button
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                  className="flex w-full items-center justify-between py-4 font-heading text-sm font-medium uppercase tracking-[0.15em] text-text-muted transition-colors hover:text-accent group cursor-pointer"
+                  className="flex w-full items-center justify-between py-4 font-heading text-sm font-medium uppercase tracking-[0.15em] text-text-muted transition-colors hover:text-accent cursor-pointer"
                 >
                   Services
                   <ChevronDown
                     size={16}
                     strokeWidth={2}
-                    className={`transition-transform duration-300 ${mobileServicesOpen ? "rotate-180 text-accent" : "group-hover:text-accent"}`}
+                    className={`transition-transform duration-300 ${mobileServicesOpen ? "rotate-180" : ""}`}
                   />
                 </button>
                 <AnimatePresence>
@@ -231,7 +249,7 @@ export default function Header() {
               <Link
                 href="/#contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 border border-white px-5 py-3 text-center font-heading text-sm font-bold uppercase tracking-[0.15em] text-white transition-all hover:border-accent hover:bg-accent hover:text-static-white cursor-pointer"
+                className="mt-4 border border-white px-5 py-3 text-center font-heading text-sm font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:bg-accent hover:text-static-white hover:border-accent"
               >
                 Contact
               </Link>

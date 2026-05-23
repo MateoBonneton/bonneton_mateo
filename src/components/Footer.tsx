@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Mail } from "lucide-react";
@@ -27,6 +30,21 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    const isDark = document.documentElement.classList.contains("dark");
+    setTheme(isDark ? "dark" : "light");
+
+    const handleThemeChange = () => {
+      const currentIsDark = document.documentElement.classList.contains("dark");
+      setTheme(currentIsDark ? "dark" : "light");
+    };
+
+    window.addEventListener("theme-change", handleThemeChange);
+    return () => window.removeEventListener("theme-change", handleThemeChange);
+  }, []);
+
   return (
     <footer className="relative overflow-hidden border-t border-grid-line-strong bg-black">
       {/* Large background outline text */}
@@ -46,13 +64,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-16 border-b border-grid-line py-24 md:grid-cols-12 md:gap-8">
           {/* Brand */}
           <div className="flex flex-col gap-6 md:col-span-5">
-            <Link href="/" className="group flex items-center gap-3">
-              <img
-                src="/images/bonneton_mateo_logo_white_trans.png"
+            <Link href="/" className="flex items-center gap-3">
+              <Image
+                src={theme === "light" ? "/images/bonneton_mateo_logo_black_trans.png" : "/images/bonneton_mateo_logo_white_trans.png"}
                 alt="Matéo Bonneton"
-                className="h-7 w-7 object-contain transition-opacity duration-300 group-hover:opacity-80 brightness-0 dark:brightness-100"
+                width={28}
+                height={28}
               />
-              <span className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-white transition-colors duration-300 group-hover:text-accent">
+              <span className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-white">
                 Matéo Bonneton
               </span>
             </Link>
@@ -89,7 +108,7 @@ export default function Footer() {
                 <Link
                   key={service.slug}
                   href={`/services/${service.slug}`}
-                  className="glow-line inline-block self-start pb-0.5 text-sm text-text-muted transition-colors hover:text-white"
+                  className="glow-line inline-block self-start pb-0.5 text-sm text-text-muted transition-colors hover:text-accent"
                 >
                   {service.shortTitle}
                 </Link>
@@ -106,7 +125,7 @@ export default function Footer() {
             <p className="text-sm text-text-muted">Provence-Alpes-Côte d&apos;Azur</p>
             <a
               href="mailto:contact@mateo-bonneton.fr"
-              className="glow-line inline-block self-start pb-0.5 text-sm text-text-muted transition-colors hover:text-white"
+              className="glow-line inline-block self-start pb-0.5 text-sm text-text-muted transition-colors hover:text-accent"
             >
               contact@mateo-bonneton.fr
             </a>
@@ -121,13 +140,13 @@ export default function Footer() {
           <div className="flex gap-8">
             <Link
               href="/mentions-legales"
-              className="text-[11px] tracking-wide text-text-dim transition-colors hover:text-text-muted"
+              className="text-[11px] tracking-wide text-text-dim transition-colors hover:text-accent"
             >
               Mentions légales
             </Link>
             <Link
               href="/mentions-legales#confidentialite"
-              className="text-[11px] tracking-wide text-text-dim transition-colors hover:text-text-muted"
+              className="text-[11px] tracking-wide text-text-dim transition-colors hover:text-accent"
             >
               Confidentialité
             </Link>
