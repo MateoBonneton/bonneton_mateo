@@ -52,15 +52,27 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-3">
-            <Image
-              src="/images/bonneton_mateo_logo.png"
-              alt="Matéo Bonneton - Expert Digital"
-              width={36}
-              height={36}
-              priority
-              className="transition-opacity duration-300 group-hover:opacity-80"
-            />
-            <span className="hidden font-heading text-sm font-semibold uppercase tracking-[0.15em] text-white sm:inline">
+            <div className="relative h-9 w-9">
+              {/* Light Mode Logo (Black) */}
+              <Image
+                src="/images/bonneton_mateo_logo_black_trans.png"
+                alt="Matéo Bonneton - Expert Digital"
+                fill
+                sizes="36px"
+                priority
+                className="object-contain transition-opacity duration-300 group-hover:opacity-80 dark:hidden"
+              />
+              {/* Dark Mode Logo (White) */}
+              <Image
+                src="/images/bonneton_mateo_logo_white_trans.png"
+                alt="Matéo Bonneton - Expert Digital"
+                fill
+                sizes="36px"
+                priority
+                className="hidden object-contain transition-opacity duration-300 group-hover:opacity-80 dark:block"
+              />
+            </div>
+            <span className="hidden font-heading text-sm font-semibold uppercase tracking-[0.15em] text-white transition-colors duration-300 group-hover:text-accent sm:inline">
               Matéo Bonneton
             </span>
           </Link>
@@ -69,7 +81,7 @@ export default function Header() {
           <nav className="hidden items-center gap-1 md:flex" aria-label="Navigation principale">
             <Link
               href="/"
-              className="group relative px-4 py-2 text-xs font-medium uppercase tracking-[0.15em] text-text-muted transition-colors duration-300 hover:text-white"
+              className="group relative px-4 py-2 text-xs font-medium uppercase tracking-[0.15em] text-text-muted transition-colors duration-300 hover:text-accent"
             >
               Accueil
             </Link>
@@ -79,7 +91,7 @@ export default function Header() {
               <button
                 onClick={() => setServicesOpen(!servicesOpen)}
                 onMouseEnter={() => setServicesOpen(true)}
-                className="flex items-center gap-1.5 px-4 py-2 text-xs font-medium uppercase tracking-[0.15em] text-text-muted transition-colors duration-300 hover:text-white"
+                className="flex items-center gap-1.5 px-4 py-2 text-xs font-medium uppercase tracking-[0.15em] text-text-muted transition-colors duration-300 hover:text-accent group cursor-pointer"
                 aria-expanded={servicesOpen}
                 aria-haspopup="true"
               >
@@ -87,7 +99,7 @@ export default function Header() {
                 <ChevronDown
                   size={12}
                   strokeWidth={2}
-                  className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}
+                  className={`transition-transform duration-300 ${servicesOpen ? "rotate-180 text-accent" : "group-hover:text-accent"}`}
                 />
               </button>
 
@@ -98,7 +110,7 @@ export default function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
-                    className="absolute left-0 top-full mt-2 w-80 border border-grid-line-strong bg-black/98 backdrop-blur-xl"
+                    className="absolute left-0 top-full mt-2 w-80 border border-grid-line-strong border-t-accent bg-black/98 backdrop-blur-xl shadow-2xl"
                     onMouseLeave={() => setServicesOpen(false)}
                   >
                     {services.map((service, i) => {
@@ -110,14 +122,14 @@ export default function Header() {
                           onClick={() => setServicesOpen(false)}
                           className="group flex items-center gap-4 border-b border-grid-line px-5 py-4 transition-colors duration-200 hover:bg-white/[0.04] last:border-b-0"
                         >
-                          <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center border border-grid-line transition-all duration-300 group-hover:border-white/30 group-hover:bg-white/[0.03]">
-                            <Icon size={14} strokeWidth={1.5} className="text-text-dim transition-colors duration-300 group-hover:text-white" />
+                          <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center border border-grid-line transition-all duration-300 group-hover:border-accent group-hover:bg-accent-light group-hover:shadow-[0_0_15px_var(--accent-light)]">
+                            <Icon size={14} strokeWidth={1.5} className="text-text-dim transition-colors duration-300 group-hover:text-accent" />
                           </div>
                           <div>
-                            <span className="block font-heading text-xs font-semibold uppercase tracking-[0.1em] text-gray-400 transition-colors group-hover:text-white">
+                            <span className="block font-heading text-xs font-semibold uppercase tracking-[0.1em] text-gray-400 transition-colors group-hover:text-accent">
                               {service.shortTitle}
                             </span>
-                            <span className="mt-0.5 block text-[11px] leading-relaxed text-text-dim transition-colors group-hover:text-text-muted">
+                            <span className="mt-0.5 block text-[11px] leading-relaxed text-text-dim transition-colors group-hover:text-white">
                               {service.title}
                             </span>
                           </div>
@@ -131,14 +143,14 @@ export default function Header() {
 
             <Link
               href="/#a-propos"
-              className="px-4 py-2 text-xs font-medium uppercase tracking-[0.15em] text-text-muted transition-colors duration-300 hover:text-white"
+              className="px-4 py-2 text-xs font-medium uppercase tracking-[0.15em] text-text-muted transition-colors duration-300 hover:text-accent"
             >
               À propos
             </Link>
 
             <Link
               href="/#contact"
-              className="group relative ml-6 overflow-hidden border border-white px-6 py-2.5 font-heading text-xs font-bold uppercase tracking-[0.15em] text-white transition-all duration-400 hover:bg-white hover:text-black"
+              className="group relative ml-6 overflow-hidden border border-white px-6 py-2.5 font-heading text-xs font-bold uppercase tracking-[0.15em] text-white transition-all duration-400 hover:border-accent hover:bg-accent hover:text-static-white cursor-pointer"
             >
               <span className="relative z-10">Contact</span>
             </Link>
@@ -153,7 +165,7 @@ export default function Header() {
             <ThemeToggle />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="flex items-center justify-center p-2 text-white animate-fade-in"
+              className="flex items-center justify-center p-2 text-white animate-fade-in cursor-pointer"
               aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -176,7 +188,7 @@ export default function Header() {
               <Link
                 href="/"
                 onClick={() => setMobileOpen(false)}
-                className="border-b border-grid-line py-4 font-heading text-sm font-medium uppercase tracking-[0.15em] text-text-muted transition-colors hover:text-white"
+                className="border-b border-grid-line py-4 font-heading text-sm font-medium uppercase tracking-[0.15em] text-text-muted transition-colors hover:text-accent"
               >
                 Accueil
               </Link>
@@ -185,13 +197,13 @@ export default function Header() {
               <div className="border-b border-grid-line">
                 <button
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                  className="flex w-full items-center justify-between py-4 font-heading text-sm font-medium uppercase tracking-[0.15em] text-text-muted transition-colors hover:text-white"
+                  className="flex w-full items-center justify-between py-4 font-heading text-sm font-medium uppercase tracking-[0.15em] text-text-muted transition-colors hover:text-accent group cursor-pointer"
                 >
                   Services
                   <ChevronDown
                     size={16}
                     strokeWidth={2}
-                    className={`transition-transform duration-300 ${mobileServicesOpen ? "rotate-180" : ""}`}
+                    className={`transition-transform duration-300 ${mobileServicesOpen ? "rotate-180 text-accent" : "group-hover:text-accent"}`}
                   />
                 </button>
                 <AnimatePresence>
@@ -211,7 +223,7 @@ export default function Header() {
                             setMobileOpen(false);
                             setMobileServicesOpen(false);
                           }}
-                          className="block border-t border-grid-line py-3 pl-6 text-xs font-medium uppercase tracking-[0.1em] text-text-dim transition-colors hover:text-white"
+                          className="block border-t border-grid-line py-3 pl-6 text-xs font-medium uppercase tracking-[0.1em] text-text-dim transition-colors hover:text-accent"
                         >
                           {service.shortTitle}
                         </Link>
@@ -226,7 +238,7 @@ export default function Header() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="border-b border-grid-line py-4 font-heading text-sm font-medium uppercase tracking-[0.15em] text-text-muted transition-colors hover:text-white"
+                  className="border-b border-grid-line py-4 font-heading text-sm font-medium uppercase tracking-[0.15em] text-text-muted transition-colors hover:text-accent"
                 >
                   {link.label}
                 </Link>
@@ -234,7 +246,7 @@ export default function Header() {
               <Link
                 href="/#contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 border border-white px-5 py-3 text-center font-heading text-sm font-bold uppercase tracking-[0.15em] text-white transition-all hover:bg-white hover:text-black"
+                className="mt-4 border border-white px-5 py-3 text-center font-heading text-sm font-bold uppercase tracking-[0.15em] text-white transition-all hover:border-accent hover:bg-accent hover:text-static-white cursor-pointer"
               >
                 Contact
               </Link>
