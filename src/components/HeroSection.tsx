@@ -157,7 +157,7 @@ export default function HeroSection() {
                     }`}
                     style={{
                       fontSize: "clamp(3rem, 9vw, 8rem)",
-                      color: "var(--white)",
+                      color: word === "boost" ? "var(--accent)" : "var(--white)",
                     }}
                     custom={i}
                     variants={lineReveal}

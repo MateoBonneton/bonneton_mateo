@@ -78,7 +78,7 @@ export default function ProcessSection() {
                 style={{ fontSize: "clamp(2.25rem, 5.5vw, 4.5rem)" }}
               >
                 Une méthode<br />
-                <span className="italic">éprouvée.</span>
+                <span className="italic text-accent">éprouvée.</span>
               </motion.h2>
             </motion.div>
 

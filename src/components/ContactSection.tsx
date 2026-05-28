@@ -49,7 +49,7 @@ export default function ContactSection() {
                 style={{ fontSize: "clamp(2.25rem, 5.5vw, 4.5rem)" }}
               >
                 Parlons de<br />
-                votre <span className="italic">projet.</span>
+                votre <span className="italic text-accent">projet.</span>
               </motion.h2>
               <motion.p
                 custom={0.2}
@@ -139,7 +139,7 @@ export default function ContactSection() {
 
                 <p className="mb-8 px-1 text-[11px] leading-relaxed text-text-dim text-center sm:text-left">
                   En envoyant ce formulaire, vous acceptez que vos données soient traitées pour répondre à votre demande conformément à notre{" "}
-                  <a href="/mentions-legales#confidentialite" className="underline transition-colors hover:text-white">
+                  <a href="/mentions-legales#confidentialite" className="underline transition-colors hover:text-accent">
                     Politique de Confidentialité
                   </a>.
                 </p>
@@ -172,7 +172,7 @@ export default function ContactSection() {
               >
                 <a
                   href="mailto:contact@mateo-bonneton.fr"
-                  className="glow-line pb-1 text-sm text-text-muted transition-colors hover:text-white"
+                  className="glow-line pb-1 text-sm text-text-muted transition-colors hover:text-accent"
                 >
                   contact@mateo-bonneton.fr
                 </a>

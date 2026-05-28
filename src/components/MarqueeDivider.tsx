@@ -10,17 +10,20 @@ const items = [
 ];
 
 export default function MarqueeDivider() {
-  const marqueeContent = items.map((item) => `${item}  ◆  `).join("");
-
   return (
     <div className="fade-mask-x relative overflow-hidden border-y border-grid-line-strong bg-black py-6">
-      <div className="marquee-track">
+      <div className="marquee-track flex items-center">
         {Array.from({ length: 4 }).map((_, i) => (
           <span
             key={i}
-            className="whitespace-nowrap px-2 font-heading text-base font-bold uppercase tracking-[0.3em] text-text-dim"
+            className="inline-flex items-center gap-6 whitespace-nowrap px-3 font-heading text-base font-bold uppercase tracking-[0.3em] text-text-dim"
           >
-            {marqueeContent}
+            {items.map((item, j) => (
+              <span key={j} className="inline-flex items-center gap-6">
+                <span>{item}</span>
+                <span className="text-accent text-[10px] select-none">◆</span>
+              </span>
+            ))}
           </span>
         ))}
       </div>

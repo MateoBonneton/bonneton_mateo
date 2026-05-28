@@ -90,7 +90,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
                 {/* Service Icon */}
                 <div className="mb-10 flex h-14 w-14 items-center justify-center border border-grid-line-strong transition-all duration-300 hover:border-accent hover:bg-accent-light hover:shadow-[0_0_20px_var(--accent-light)]">
-                  <Icon size={24} strokeWidth={1.5} className="text-white transition-colors hover:text-accent" />
+                  <Icon size={24} strokeWidth={1.5} className="text-accent" />
                 </div>
 
                 {/* Title */}

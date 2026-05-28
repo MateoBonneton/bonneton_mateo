@@ -51,7 +51,7 @@ export default function ServicesSection() {
                 style={{ fontSize: "clamp(2.25rem, 5.5vw, 4.5rem)" }}
               >
                 Ce que je<br />
-                <span className="italic">propose.</span>
+                <span className="italic text-accent">propose.</span>
               </motion.h2>
             </motion.div>
 

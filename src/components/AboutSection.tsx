@@ -59,7 +59,7 @@ export default function AboutSection() {
               >
                 L&apos;expertise au<br />
                 service de votre<br />
-                <span className="italic">croissance.</span>
+                <span className="italic text-accent">croissance.</span>
               </motion.h2>
             </motion.div>
 
@@ -101,7 +101,7 @@ export default function AboutSection() {
                     <div key={stat.label} className="bg-black py-8 pr-6">
                       {/* Decorative top line */}
                       <div className="mb-5 h-px w-6 bg-accent" />
-                      <p className="font-heading text-3xl font-black tracking-tight text-white lg:text-4xl">
+                      <p className="font-heading text-3xl font-black tracking-tight text-accent lg:text-4xl">
                         {stat.value}
                       </p>
                       <p className="mt-3 font-heading text-[10px] font-semibold uppercase tracking-[0.15em] text-text-dim">

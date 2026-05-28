@@ -48,14 +48,14 @@ export default function MentionsLegalesPage() {
               {/* Header */}
               <div className="mb-20">
                 <div className="mb-6 flex h-12 w-12 items-center justify-center border border-grid-line-strong transition-all duration-300 hover:border-accent hover:bg-accent-light hover:shadow-[0_0_20px_var(--accent-light)]">
-                  <Shield size={20} strokeWidth={1.5} className="text-white transition-colors hover:text-accent" />
+                  <Shield size={20} strokeWidth={1.5} className="text-accent" />
                 </div>
                 <h1
                   className="font-heading font-black uppercase leading-[0.9] tracking-tight text-white"
                   style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
                 >
                   Mentions Légales<br />
-                  <span className="italic">&amp; CGU</span>
+                  <span className="italic text-accent">&amp; CGU</span>
                 </h1>
                 <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-text-dim">
                   Mise à jour le 22 mai 2026
